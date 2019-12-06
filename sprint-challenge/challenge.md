@@ -268,6 +268,9 @@ career here, you'll have to answer the following:
 
 Answer both of these questions (baseline ~5 sentences) here in text.
 
+1. Code reviews are good because it's always beneficial to have a second (or more) set of eyes on your work. You may miss simple errors or style inconsistencies whereas it may jump out to another person looking at your code. They should be looking for the flow and if it's easy to follow. Funcionality of course is important and if your code easily demonstrates logic for what it's achieving. I appreciated when suggestions were made for my code to enhance its usability by taking into account exceptions and also the way I was organizing my files.
+2. Because there are many different operating systems, versions, computers, etc as mentioned above, containers provide a solution for these problems. With containers you can control version and runtime environments, have them deployed to any operating system to many people. Basically, containers are good for reproducibility.
+
 ### Part 8 - Turn it in!
 
 Provide all the files you wrote (`acme.py`, `acme_report.py`, and

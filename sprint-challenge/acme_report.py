@@ -1,3 +1,5 @@
+
+import random
 from random import randint, sample, uniform
 from acme import Product
 
@@ -5,26 +7,50 @@ from acme import Product
 ADJECTIVES = ['Awesome', 'Shiny', 'Impressive', 'Portable', 'Improved']
 NOUNS = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
 
-def generate_products()
 
+def generate_products(num_products=30):
+    """
+    generate a list of 30 randomly selected product names
+    """
+    products = []
+    for num in range(num_products):
+        product_names = (random.sample(ADJECTIVES, 1)[0] + " " + 
+                        random.sample(NOUNS, 1)[0])
+        products.append(product_names)
     return products
 
 
-def inventory_report(names, prices, weights, flammabilities):
+def inventory_report(products):
     """
     takes a list of products and prints a nice summary
     """
-    num_products = len(products)
-    avg_price = mean(prices)
-    avg_weight = mean(weights)
-    avg_flammability = mean(flammabilities)
+    inventory_list = []
 
+    for product_name in products:
+        price = random.randint(5, 100)
+        weight = random.randint(5, 100)
+        flammability = random.uniform(0.0, 2.5)
+
+        prod = Product(product_name,
+                      price=price,
+                      weight=weight,
+                      flammability=flammability)
+        inventory_list.append(prod)
+
+    prices = []
+    weights = []
+    flammabilities = []
+
+    for item in inventory_list:
+        prices.append(item.price)
+        weights.append(item.weight)
+        flammabilities.append(item.flammability)
 
     print("ACME CORPORATION OFFICIAL INVENTORY REPORT")
-    print("Unique product names: {}".format(num_products))
-    print("Average price: {}".format(avg_price))
-    print("Average weight: {}".format(avg_weight))
-    print("Average flammability: {}".format(avg_flammability))
+    print("Unique product names:", len(set(products)))
+    print("Average price:", sum(prices)/len(prices))
+    print("Average weight:", sum(weights)/len(weights))
+    print("Average flammability:", sum(flammabilities)/len(flammabilities))
 
 
 if __name__ == '__main__':
